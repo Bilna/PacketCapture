@@ -10,7 +10,6 @@ import org.jnetpcap.packet.PcapPacket
 
 class PcapEncoder(props: VerifiableProperties) extends Encoder[PcapPacket] {
    def toBytes(packet:PcapPacket):Array[Byte] = {
-     // Added by Bilna
      val toByte = new Array[Byte](packet.getTotalSize());
      packet.transferStateAndDataTo(toByte)
      toByte
